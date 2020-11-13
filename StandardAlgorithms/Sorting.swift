@@ -10,6 +10,5 @@ import Foundation
 class Sorting {
     func bubbleSort(data: [Int]) -> [Int]{
         return []
-        
     }
 }
