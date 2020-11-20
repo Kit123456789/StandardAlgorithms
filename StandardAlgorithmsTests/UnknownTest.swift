@@ -10,16 +10,21 @@ import XCTest
 class UnknownTest: XCTestCase {
     func testsumFirstAndLastReturns0WithEmptyArray(){
         //arrange
-        let unkown = Unknown()
+        let unknown = Unknown()
         //act
-        let result = unkown.sumFirstAndLast(data: [])
+        let result = unknown.sumFirstAndLast(data: [])
         //assert
         XCTAssertEqual(result, 0)
     }
     func testsumFirstAndLastReturnsNumberTimesTwoIfArrayOnlyHasOneNumber(){
-        let unkown = Unknown()
-        let result = unkown.sumFirstAndLast(data: [1])
+        let unknown = Unknown()
+        let result = unknown.sumFirstAndLast(data: [1])
         XCTAssertEqual(result, 2)
+    }
+    func testsumFirstAndLastReturnsSumFirstAndLast(){
+        let unknown = Unknown()
+        let result = unknown.sumFirstAndLast(data: [6,4,10])
+        XCTAssertEqual(result, 16)
     }
 
 }

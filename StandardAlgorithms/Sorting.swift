@@ -11,18 +11,19 @@ class Sorting {
     func bubbleSort(data: [Int]) -> [Int]{
         var sortedData = data
         var swaps = 0
+        var sorted = false
         if sortedData.count > 0{
-            outerLoop: for i in 0..<sortedData.count-1{
-                swaps = 0
-                if sortedData[i] > sortedData[i + 1]{
-                    sortedData.insert(sortedData[i], at:i+2)
-                    sortedData.remove(at: i)
-                    swaps += 1
-                }
-                if swaps == 0{
-                    break outerLoop
-                }
-               
+            while sorted == false{
+                for i in 0..<sortedData.count-1{
+                    if sortedData[i] > sortedData[i + 1]{
+                        sortedData.insert(sortedData[i], at:i+2)
+                        sortedData.remove(at: i)
+                        swaps += 1
+                    if swaps == sortedData.count*2{
+                        sorted = true
+                    }
+                    }
+            }
             }
         }
         else{

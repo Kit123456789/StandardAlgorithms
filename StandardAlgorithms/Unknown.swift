@@ -9,7 +9,9 @@ import Foundation
 
 class Unknown{
     func sumFirstAndLast(data: [Int]) -> Int{
-        if data.count == 1{
+        if data.count > 1{
+            return data[0] + data[data.count-1]
+        }else if data.count == 1{
             return data[0] * 2
         }
         else{
