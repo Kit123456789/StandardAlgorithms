@@ -78,9 +78,27 @@ class Sorting {
                 sortedData.append(unsortedData[i+1])
             }
             else{
-                sortedData.insert(unsortedData[i+1], at: sortedData.count-2)
+                var sorting = false
+                var checks = 1
+                outerLoop: for j in i..<unsortedData.count-2{
+                    if unsortedData[j+1] > sortedData[sortedData.count-2]{
+                        sortedData.insert(unsortedData[i+1], at: sortedData.count-checks)
+                        sorting = true
+                        break outerLoop
+                    }
+                    checks += 1
+                }
+                if sorting == false{
+                    sortedData.insert(unsortedData[i+1], at: 0)
+                }
+            }
+    }
+        loop: for l in 0..<unsortedData.count-1{
+            if unsortedData[unsortedData.count-1] > sortedData[l]{
+                sortedData.insert(unsortedData[unsortedData.count-1], at: l+2)
+                break loop
             }
         }
         return sortedData
-    }
+}
 }
